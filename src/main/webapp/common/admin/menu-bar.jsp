@@ -17,12 +17,12 @@
 			</h5>
 		</li>
 
-		<li class="nav-item"><a href="#" class="nav-link">
+		<li class="nav-item"><a href="listContact?status=all" class="nav-link">
 				<h5>
-					<i class="fas fa-address-card"></i> Liên hệ
+					<i class="fas fa-address-card" ></i> Liên hệ
 				</h5>
 		</a></li>
-		<li class="nav-item"><a href="#" class="nav-link">
+		<li class="nav-item"><a href="statistic" class="nav-link">
 				<h5>
 					<i class="fas fa-chart-bar"></i> Thống kê
 				</h5>

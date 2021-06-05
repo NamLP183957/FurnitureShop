@@ -16,10 +16,10 @@
 
 					<div class="dropdown-menu">
 						<a class="dropdown-item" href="#">Thiết kế biệt thự</a> <a
-							class="dropdown-item" href="#">THiết kế chung cư</a> <a
+							class="dropdown-item" href="#">Thiết kế chung cư</a> <a
 							class="dropdown-item" href="#">Thiết kế phòng khách</a> <a
 							class="dropdown-item" href="#">Thiết kế phòng khách</a> <a
-							class="dropdown-item" href="#">THiết kế phòng ngủ</a> <a
+							class="dropdown-item" href="#">Thiết kế phòng ngủ</a> <a
 							class="dropdown-item" href="#">Thiết kế phòng bếp</a>
 					</div>
 				</div>
@@ -38,11 +38,11 @@
 					</div>
 				</div>
 				<div class="col-lg-3">
-					<button type="button" class="btn btn-secondary col-lg-12">Login</button>
+					<button type="button" class="btn btn-secondary col-lg-12">Order</button>
 				</div>
 
 				<div class="col-lg-3">
-					<button type="button" class="btn btn-secondary col-lg-12">Register</button>
+					<button type="button" class="btn btn-secondary col-lg-12">Logout</button>
 				</div>
 
 			</div>

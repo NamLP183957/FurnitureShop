@@ -40,7 +40,7 @@
 							<p class="card-text">${product.description}</p>
 						</div>
 						<div class="card-footer">
-							<a href="#" class="btn btn-primary btn-sm">More Info</a>
+							<a href="ChiTiet?id=${product.id}" class="btn btn-primary btn-sm">More Info</a>
 						</div>
 					</div>
 				</div>
