@@ -13,7 +13,7 @@
         <div class="card card-login mt-5 col-lg-5 col-sm-10 border border-primary" style="margin-left: 30%;">
           <div class="card-header border border-primary">Login</div>
           <div class="card-body">
-            <form action="admin/authenticate">
+            <form action="authenticate" method="post">
               <div class="form-group mt-3">
                 <div class="form-label-group">
                   <input type="text" id="inputEmail" class="form-control" placeholder="Username" required="required" autofocus="autofocus"

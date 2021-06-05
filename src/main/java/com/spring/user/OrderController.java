@@ -41,7 +41,7 @@ public class OrderController {
 	public ModelAndView saveOrder(@RequestParam("productId")int productId, @RequestParam("number")int numberProduct, 
 								@RequestParam("userName")String userName, @ModelAttribute("currentUser")User currentUser,
 								@RequestParam("phoneNumber")String phoneNumber, @RequestParam("address")String address) {
-		ModelAndView mav = homepageService.getObjectOfHomepage();
+		ModelAndView mav = homepageService.getObjectOfHomepage("all");
 		long milis = System.currentTimeMillis();
 		Date startDateTime = new Date(milis);
 		Contact contact = new Contact(numberProduct, false, startDateTime, userName, phoneNumber, address);

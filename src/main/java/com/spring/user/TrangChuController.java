@@ -25,7 +25,7 @@ public class TrangChuController {
 	
 	@RequestMapping("/")
 	public ModelAndView getHome() {
-		ModelAndView mav = homepageService.getObjectOfHomepage();
+		ModelAndView mav = homepageService.getObjectOfHomepage("all");
 		mav.setViewName("user/homepage");
 		return mav;
 	}

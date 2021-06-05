@@ -47,7 +47,7 @@
 						<table class="table table-bordered table-hover">
 							<thead>
 								<tr>
-									<th>STT</th>
+									<th>ID</th>
 									<th>Sản phẩm</th>
 									<th>Chi tiết</th>
 								</tr>
@@ -57,7 +57,7 @@
 									<tr> 
 										<td>${product.id} </td>
 										<td>${product.name} </td>
-										<td><a href="admin/productDetail?id=${product.id}">chi tiết </a></td>
+										<td><a href="productDetail?id=${product.id}">chi tiết </a></td>
 									</tr>
 								
 								 </c:forEach>
@@ -66,7 +66,7 @@
 					</div>
 
 					<div class="col-sm-2">
-						<button class="btn btn-primary col-sm-12 mb-3" onclick="location.href='admin/addProduct?type=${type}'">Thêm</button>
+						<button class="btn btn-primary col-sm-12 mb-3" onclick="location.href='addProduct?type=${type}'">Thêm</button>
 					</div>
 				</div>
 			</div>

@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg bg-secondary">
 
 	<ul class="navbar-nav col-xl-8 col-sm-6">
-		<li class="nav-item"><a href="admin/home" class="nav-link">
+		<li class="nav-item"><a href="home" class="nav-link">
 				<h4>
 					ADMIN <i class="fas fa-home"></i>
 				</h4>

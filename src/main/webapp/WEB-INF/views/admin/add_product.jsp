@@ -9,7 +9,7 @@
 <body>
 	<div id="content-wrapper" class="col-xl-10 col-sm-9 mt-3"
 		style="float: right;">
-		<form class="form-horizonal" action="admin/saveProduct?type=${type}" enctype="multipart/form-data" method="post">
+		<form class="form-horizonal" action="saveProduct?type=${type}" enctype="multipart/form-data" method="post">
 			<div class="form-group form-check-inline w-100">
 				<label class="col-sm-2 col-xl-2 text-dark" for="name"><h5>Tên
 						sản phẩm:</h5></label>

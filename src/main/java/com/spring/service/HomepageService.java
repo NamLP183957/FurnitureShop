@@ -1,5 +1,6 @@
 package com.spring.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.DAO.ProductDAO;
-import com.spring.entity.Image;
 import com.spring.entity.Product;
 
 @Service
@@ -19,13 +19,27 @@ public class HomepageService {
 	@Autowired
 	ProductService productService;
 	
-	public ModelAndView getObjectOfHomepage() {
+	public ModelAndView getObjectOfHomepage(String style) {
+		List<Product> listProduct = productDAO.getProductByStyle(style);
 		ModelAndView mav = new ModelAndView();
-		Product product = productDAO.getBestSell();
-		Product bestSellProduct = productService.getProductAndImageService(product);
-		List<Image> listImage = bestSellProduct.getImages();
-		mav.addObject("bestProduct", bestSellProduct);
-		mav.addObject("bestSellImage", listImage.get(0));		
+		
+		for (Product product : listProduct) {
+			product = productService.getProductAndImageService(product);
+		}
+		
+		Product bestProduct = listProduct.get(0);
+		mav.addObject("bestProduct", bestProduct);
+		mav.addObject("bestSellImage", bestProduct.getImages().get(0));
+		
+		List<Product> products = new ArrayList<Product>();
+		
+		int size = listProduct.size();
+		
+		for (int i = 1; i < size; i++) {
+			products.add(listProduct.get(i));
+		}
+		
+		mav.addObject("products", products);
 		return mav;
 	}
 }

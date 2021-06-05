@@ -11,8 +11,8 @@
 				</a>
 
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="admin/product?type=design_pattern">Mẫu thiết kế</a> 
-					<a class="dropdown-item" href="admin/product?type=decorator_product">Sản phẩm trang trí</a>
+					<a class="dropdown-item" href="product?type=design_pattern">Mẫu thiết kế</a> 
+					<a class="dropdown-item" href="product?type=decorator_product">Sản phẩm trang trí</a>
 				</div>
 			</h5>
 		</li>

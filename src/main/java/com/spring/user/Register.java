@@ -70,7 +70,7 @@ public class Register {
 			mav.addObject("announcement", "Login failed! Email is not in system or password not true");
 			mav.addObject("status", false);
 		} else {
-			mav = homepageService.getObjectOfHomepage();
+			mav = homepageService.getObjectOfHomepage("all");
 			mav.addObject("currentUser", user);
 			mav.setViewName("user/homepage");
 		}
