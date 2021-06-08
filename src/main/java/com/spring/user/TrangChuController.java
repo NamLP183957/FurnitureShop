@@ -3,6 +3,7 @@ package com.spring.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,9 +24,16 @@ public class TrangChuController {
 	@Autowired
 	HomepageService homepageService;
 	
-	@RequestMapping("/")
+	@RequestMapping("/trangChu")
 	public ModelAndView getHome() {
 		ModelAndView mav = homepageService.getObjectOfHomepage("all");
+		mav.setViewName("user/homepage");
+		return mav;
+	}
+	
+	@RequestMapping("/sanPham")
+	public ModelAndView getListProduct(@RequestParam("style")String style) {
+		ModelAndView mav = homepageService.getObjectOfHomepage(style);
 		mav.setViewName("user/homepage");
 		return mav;
 	}

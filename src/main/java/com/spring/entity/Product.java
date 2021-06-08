@@ -1,8 +1,10 @@
 package com.spring.entity;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +26,8 @@ public class Product {
 	private Long price;
 	private Long numberInWare;
 	private Long numberOfSell;
+	@Column(name = "dateInWare", columnDefinition = "DATETIME")
+	private Date dateInWare;
 	private String style;
 	
 	
@@ -35,7 +39,7 @@ public class Product {
 	}
 
 	public Product(String name, String description, String type, Long price, Long numberInWare, Long numberOfSell, String style,
-			List<Image> images) {
+			List<Image> images, Date dateInWare) {
 		super();
 		this.name = name;
 		this.description = description;
@@ -45,10 +49,11 @@ public class Product {
 		this.numberOfSell = numberOfSell;
 		this.style = style;
 		this.images = images;
+		this.dateInWare = dateInWare;
 	}
 
 	public Product(String name, String description, String type, Long price, Long numberInWare, Long numberOfSell,
-			String style) {
+			String style, Date dateInWare) {
 		super();
 		this.name = name;
 		this.description = description;
@@ -57,10 +62,20 @@ public class Product {
 		this.numberInWare = numberInWare;
 		this.numberOfSell = numberOfSell;
 		this.style = style;
+		this.dateInWare = dateInWare;
 	}
 
 	public int getId() {
 		return id;
+	}
+	
+
+	public Date getDateInWare() {
+		return dateInWare;
+	}
+
+	public void setDateInWare(Date dateInWare) {
+		this.dateInWare = dateInWare;
 	}
 
 	public void setId(int id) {

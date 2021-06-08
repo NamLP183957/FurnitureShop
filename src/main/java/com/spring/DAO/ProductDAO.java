@@ -8,7 +8,9 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.SessionFactoryUtils;
 import org.springframework.stereotype.Repository;
 
 import com.spring.entity.Image;
@@ -154,5 +156,18 @@ public class ProductDAO {
 		return listProduct.get(0);
 	}
 	
+	public List<Product> getListNewProduct(){
+		List<Product> listNewProduct = new ArrayList<Product>();
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		NativeQuery query = session.createNativeQuery("SELECT * FROM Product p WHERE p.dateInWare "
+				+ "BETWEEN (CURRENT_DATE - INTERVAL 1 MONTH) AND CURRENT_DATE");
+		listNewProduct = query.addEntity(Product.class).list();
+		
+		transaction.commit();
+		session.close();
+		return listNewProduct;
+	}
 
 }

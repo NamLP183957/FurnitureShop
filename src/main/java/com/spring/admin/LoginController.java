@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.DAO.AdminDAO;
-import com.spring.DAO.ProductDAO;
+import com.spring.service.AdminHomeService;
 
 @Controller
 @RequestMapping("/admin")
@@ -20,7 +20,7 @@ public class LoginController {
 	AdminDAO adminDAO;
 	
 	@Autowired
-	private ProductDAO productDao;
+	AdminHomeService adminHomeService;
 	
 	@RequestMapping(value = {"/", "/login"})
 	public ModelAndView login() {
@@ -31,7 +31,7 @@ public class LoginController {
 	
 	@PostMapping(value = "/authenticate")
 	public ModelAndView authenciate(HttpServletRequest request) {
-		ModelAndView mav = new ModelAndView();
+		ModelAndView mav;
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
@@ -39,12 +39,12 @@ public class LoginController {
 		String passOfUsername = adminDAO.getAdmin(username);
 		
 		if(password.equals(passOfUsername)) {
+			mav = adminHomeService.getHomeModel();
 			mav.setViewName("admin/home");
-			Long numberProduct = productDao.getNumberProduct("all");
-			mav.addObject("numberProduct", numberProduct);
 			mav.addObject("status", true);
 		}
 		else {
+			mav = new ModelAndView();
 			mav.setViewName("admin/login");
 			mav.addObject("status", false);
 		}

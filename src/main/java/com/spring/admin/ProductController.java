@@ -3,6 +3,7 @@ package com.spring.admin;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
@@ -56,7 +57,9 @@ public class ProductController {
 		Long numberOfSell = (long) 0;
 		
 		List<Image> listImage = new ArrayList<Image>();
-		Product product = new Product(name, description, type, price, numberInWare, numberOfSell, style, listImage);
+		Long currentTime = System.currentTimeMillis();
+		Date dateInWare = new Date(currentTime);
+		Product product = new Product(name, description, type, price, numberInWare, numberOfSell, style, listImage, dateInWare);
 		
 		for (MultipartFile file : files) {
 			Image image = new Image();

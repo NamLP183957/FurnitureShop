@@ -19,17 +19,17 @@
                     <div class="col-xl-3 col-sm-6 mb-3">
                         <div class="card bg-warning">
                             <div class="card-body">
-                                <p>${numberProduct} sản phẩm</p> 
+                                <p>${numberProduct} sản phẩm mới</p> 
                             </div>
-                            <div class="card-footer"><a href="#" class="text-white">Chi tiết ></a></div>
+                            <div class="card-footer"><a href="listNewProduct" class="text-white">Chi tiết ></a></div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 mb-3">
                         <div class="card bg-info">
                             <div class="card-body">
-                                <div class="mr-5"><p>20 Liên hệ</p></div>
+                                <div class="mr-5"><p>${numberContact} liên hệ mới</p></div>
                             </div>
-                            <div class="card-footer"><a href="#" class="text-white">Chi tiết ></a></div>
+                            <div class="card-footer"><a href="listNewContact" class="text-white">Chi tiết ></a></div>
                         </div>
                     </div>
                     <div class="col-xl-3 col-sm-6 mb-3">

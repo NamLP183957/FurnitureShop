@@ -53,7 +53,7 @@ public class OrderController {
 		currentUser.addContact(contact);
 		contactDAO.saveContact(contact);
 		
-		mav.setViewName("user/trang_chu");
+		mav.setViewName("user/homepage");
 		return mav;
 	}
 }

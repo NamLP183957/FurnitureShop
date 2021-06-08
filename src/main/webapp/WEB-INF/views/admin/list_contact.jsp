@@ -8,9 +8,9 @@
 		<div class="container-fluid">
 			<div class="breadcrumb row " style="width: 1200px;">
 				<div class="col-xl-8 col-sm-12">Danh sách liên hệ</div>
-				<button href="#" class="btn btn-outline-danger">Chưa liên
+				<button onclick="location.href='listContact?status=notContact'" class="btn btn-outline-danger">Chưa liên
 					hệ</button>
-				<button href="#" class="btn btn-outline-success"
+				<button onclick="location.href='listContact?status=contacted'" class="btn btn-outline-success"
 					style="margin-left: 20px;">Đã liên hệ</button>
 			</div>
 
@@ -35,7 +35,7 @@
 							<c:if test="${contact.status == true }">Đã liên hệ</c:if>
 							<c:if test="${contact.status == false }">Chưa liên hệ</c:if>
 							</td>
-							<td><a href="#">Chi Tiết</a></td>
+							<td><a href="contactDetail?contactID=${contact.id}">Chi Tiết</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

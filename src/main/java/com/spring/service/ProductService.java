@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.DAO.ProductDAO;
 import com.spring.entity.Image;
@@ -31,4 +32,10 @@ public class ProductService {
 		return product;
 	}
 	
+	public ModelAndView getListNewProduct() {
+		ModelAndView mav = new ModelAndView();
+		List<Product> listNewProduct = productDAO.getListNewProduct();
+		mav.addObject("listProduct", listNewProduct);
+		return mav;
+	}
 }

@@ -8,7 +8,7 @@
 		<div class="row align-items-center my-5">
 			<div class="col-lg-7">
 				<img class="img-fluid rounded mb-4 mb-lg-0"
-					src="data:image/jsp;base64,${bestSellImage.base64Image}" alt="">
+					src="data:image/jsp;base64,${bestSellImage.base64Image}" alt=""  style="width: 512px; height: 300px;">
 			</div>
 			<!-- /.col-lg-8 -->
 			<div class="col-lg-5">
