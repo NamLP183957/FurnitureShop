@@ -20,11 +20,14 @@
 	
 	<c:if test="${status == true}">
 		<%@ include file="/common/admin/header.jsp"%>
-		<%@ include file="/common/admin/menu-bar.jsp"%>
 	</c:if>
-
-
-	<dec:body />
+		<div class="row h-100">
+			<c:if test="${status == true}">
+				<%@ include file="/common/admin/menu-bar.jsp"%>
+			</c:if>
+			<dec:body />
+		</div>
+		
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

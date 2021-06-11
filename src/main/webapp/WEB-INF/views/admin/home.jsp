@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <body>
         
         <div id="content-wrapper" class="col-xl-10 xol-sm-9" style="float: right;">
@@ -43,7 +38,7 @@
                     <div class="col-xl-3 col-sm-6 mb-3">
                         <div class="card bg-danger">
                             <div class="card-body">
-                                <div class="mr-5"><p>30 New messages</p></div>
+                                <div class="mr-5"><p>30 Tin nhắn mới</p></div>
                             </div>
                             <div class="card-footer"><a href="#" class="text-white">Chi tiết ></a></div>
                         </div>
@@ -66,31 +61,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Thiết kế nội thất</td>
-                                <td>20</td>
-                                <td>2/2/2021</td>
+                        <c:forEach items="${listProduct}" var="product"> 
+                        	<tr>
+                                <td>${product.name }</td>
+                                <td>${product.numberInWare }</td>
+                                <td>${product.dateInWare }</td>
                             </tr>
-                            <tr>
-                                <td>Thiết kế nội thất</td>
-                                <td>20</td>
-                                <td>2/2/2021</td>
-                            </tr>
-                            <tr>
-                                <td>Thiết kế nội thất</td>
-                                <td>20</td>
-                                <td>2/2/2021</td>
-                            </tr>
-                            <tr>
-                                <td>Thiết kế nội thất</td>
-                                <td>20</td>
-                                <td>2/2/2021</td>
-                            </tr>
-                            <tr>
-                                <td>Thiết kế nội thất</td>
-                                <td>20</td>
-                                <td>2/2/2021</td>
-                            </tr>
+                        </c:forEach>
                         </tbody>
                     </table>
                 </div>
@@ -98,4 +75,3 @@
 
         </div>
 </body>
-</html>

@@ -14,32 +14,18 @@
 			<div class="container-fluid">
 
 				<div class="breadcrumb">
-					<a href="#">Sản phẩm </a> / Mẫu thiết kế
+					<a href="#">Product </a> / ${type}
 				</div>
 
 				<div class="container-fluid row">
+				<c:forEach items="${listStyle}" var="style">
 					<button type="button"
-						class="btn btn-outline-primary col-xl-2 col-sm-6 mb-3">Chung
-						cư</button>
-					<button type="button"
-						class="btn btn-outline-warning col-xl-2 col-sm-6 mb-3">Khách
-						sạn</button>
-					<button type="button"
-						class="btn btn-outline-secondary col-xl-2 col-sm-6 mb-3">Biệt
-						thự</button>
-					<button type="button"
-						class="btn btn-outline-danger col-xl-2 col-sm-6 mb-3">Phòng
-						khách</button>
-					<button type="button"
-						class="btn btn-outline-success col-xl-2 col-sm-6 mb-3">Phòng
-						ngủ</button>
-					<button type="button"
-						class="btn btn-outline-info col-xl-2 col-sm-6 mb-3">Phòng
-						bếp</button>
+						class="btn btn-outline-success col-xl-2 col-sm-6 mb-3 mr-3">${style}</button>
+				</c:forEach>
 				</div>
-
+				
 				<div class="breadcrumb">
-					<p>Chung cư</p>
+					<p>${type}</p>
 				</div>
 
 				<div class="container-fluid row">

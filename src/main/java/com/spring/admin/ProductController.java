@@ -36,7 +36,9 @@ public class ProductController {
 	public ModelAndView product(@RequestParam("type") String type) {
 		ModelAndView mav = new ModelAndView("admin/product");
 		List<Product> listProduct = productDAO.getProduct(type);
+		List<String> listStyle = productDAO.getStyleProduct(type);
 		mav.addObject("listProduct", listProduct);
+		mav.addObject("listStyle", listStyle);
 		mav.addObject("type", type);
 		return mav;
 	}

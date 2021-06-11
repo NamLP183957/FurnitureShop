@@ -17,6 +17,7 @@ import com.spring.DAO.ProductDAO;
 import com.spring.entity.Contact;
 import com.spring.entity.Product;
 import com.spring.entity.User;
+import com.spring.service.ContactService;
 import com.spring.service.HomepageService;
 import com.spring.service.ProductService;
 
@@ -24,7 +25,9 @@ import com.spring.service.ProductService;
 @SessionAttributes("currentUser")
 @RequestMapping("/user")
 public class OrderController {
-
+	@Autowired
+	ContactService contactService;
+	
 	@Autowired
 	ProductService productService;
 	
@@ -54,6 +57,13 @@ public class OrderController {
 		contactDAO.saveContact(contact);
 		
 		mav.setViewName("user/homepage");
+		return mav;
+	}
+	
+	@RequestMapping(value = "/lienHe")
+	public ModelAndView getListContact(@ModelAttribute("currentUser")User user) {
+		ModelAndView mav = contactService.getListContactAndImage(user);
+		mav.setViewName("user/list_contact");
 		return mav;
 	}
 }

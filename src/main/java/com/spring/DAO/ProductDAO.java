@@ -169,5 +169,19 @@ public class ProductDAO {
 		session.close();
 		return listNewProduct;
 	}
+	
+	public List<String> getStyleProduct(String type){
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Query query = session.createQuery("SELECT p.style  FROM Product p WHERE p.type =:type");
+		query.setParameter("type", type);
+		List<String> listStyle = query.list();
+		
+		transaction.commit();
+		session.close();
+		
+		return listStyle;
+	}
 
 }

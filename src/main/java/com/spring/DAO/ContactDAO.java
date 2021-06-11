@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import com.spring.entity.Contact;
 import com.spring.entity.ProductStatistic;
+import com.spring.entity.User;
 
 @Repository(value = "contactDAO")
 public class ContactDAO {
@@ -86,5 +87,29 @@ public class ContactDAO {
 		transaction.commit();
 		session.close();
 		return listProduct;
+	}
+	
+	public List<Contact> getListUserContacts(String status, User user){
+		List<Contact> listContact = new ArrayList<Contact>();
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Query query;
+		if (status.equals("all")) {
+			query = session.createQuery("FROM Contact c WHERE c.user =:user");
+		} else if (status.equals("contacted")) {
+			query = session.createQuery("FROM Contact c WHERE c.status =:status AND c.user =:user");
+			query.setParameter("status", true);
+		} else {
+			query = session.createQuery("FROM Contact c WHERE c.status =:status AND c.user =:user");
+			query.setParameter("status", false);
+		}
+		query.setParameter("user", user);
+		listContact = query.list();
+		
+		transaction.commit();
+		session.close();
+		
+		return listContact;
 	}
 }
